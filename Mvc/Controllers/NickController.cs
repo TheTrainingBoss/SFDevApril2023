@@ -8,6 +8,7 @@ using Progress.Sitefinity.Renderer.Designers.Attributes;
 using Progress.Sitefinity.Renderer.Entities.Content;
 using SFDevApril2023.Mvc.Models;
 using System;
+using System.ComponentModel;
 using System.Web.Mvc;
 using Telerik.Sitefinity.Mvc;
 using Telerik.Sitefinity.Personalization;
@@ -41,8 +42,10 @@ namespace SFDevApril2023.Mvc.Controllers
         }
 
         public string Message { get; set; }
+        [Category("Lino")]
         public bool Flag { get; set; }
         public Enumeration Enum { get; set; }
+        [Browsable(false)]
         public int Number { get; set; }
         public DateTime MyDate { get; set; }
 
