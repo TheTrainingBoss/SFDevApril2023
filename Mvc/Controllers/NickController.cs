@@ -16,7 +16,8 @@ using Telerik.Sitefinity.Personalization;
 namespace SFDevApril2023.Mvc.Controllers
 {
 	[ControllerToolboxItem(Name = "Nick", Title = "Nick", SectionName = "SFDevApril2023")]
-	public class NickController : Controller, IPersonalizable
+	
+    public class NickController : Controller, IPersonalizable
 	{
 		// GET: Nick
 		public ActionResult Index()
@@ -35,7 +36,7 @@ namespace SFDevApril2023.Mvc.Controllers
 
             return View("Arun");
         }
-		
+		       
         protected override void HandleUnknownAction(string actionName)
         {
             this.ActionInvoker.InvokeAction(this.ControllerContext, "Index");
