@@ -17,6 +17,7 @@ namespace SFDevApril2023.Mvc.Controllers
 {
 	[ControllerToolboxItem(Name = "Nick", Title = "Nick", SectionName = "SFDevApril2023")]
 	
+    
     public class NickController : Controller, IPersonalizable
 	{
 		// GET: Nick
@@ -27,7 +28,6 @@ namespace SFDevApril2023.Mvc.Controllers
             model.Number = this.Number;
             model.MyDate = this.MyDate;
             model.Flag = this.Flag;
-            model.Enum = this.Enum;
 			return View("Index", model);
 		}
 
@@ -37,6 +37,7 @@ namespace SFDevApril2023.Mvc.Controllers
             return View("Arun");
         }
 		       
+        
         protected override void HandleUnknownAction(string actionName)
         {
             this.ActionInvoker.InvokeAction(this.ControllerContext, "Index");
