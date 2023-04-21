@@ -1,0 +1,44 @@
+﻿@using System.Web.Mvc;
+@using Telerik.Sitefinity.Frontend.Mvc.Helpers;
+@using Telerik.Sitefinity.Modules.Pages;
+@using Telerik.Sitefinity.UI.MVC;
+@using Telerik.Sitefinity.Services;
+
+<!DOCTYPE html>
+<html @Html.RenderLangAttribute() @Html.RenderDirAttribute()>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    @Html.Section("head")
+    @if (Html.RenderDirAttribute().ToString() != "dir=\"rtl\"") {
+        Html.StyleSheet(Url.WidgetContent("~/ResourcePackages/Bootstrap5/assets/dist/css/main.min.css"), "head", true);
+        Html.StyleSheet(Url.WidgetContent("~/Css/main.css"), "head", true);
+        Html.Script(Url.WidgetContent("~/Js/goodstuff.js"), "head", true);
+    } else {
+        Html.StyleSheet(Url.WidgetContent("~/ResourcePackages/Bootstrap5/assets/dist/css/main.min.rtl.css"), "head", true);
+    }
+    <title></title>
+</head>
+
+<body>
+    @Html.Section("top")
+
+    <div class="container-fluid">
+        @Html.SfPlaceHolder("Header")
+    </div>
+    <div class="container-fluid Justin">
+        @Html.SfPlaceHolder("Main")
+    </div>
+    <div class="container-fluid">
+        @Html.SfPlaceHolder("Footer")
+    </div>
+
+   
+    @Html.Section("jquery")
+    @Html.Section("frameworks")
+    @Html.Section("plugins")
+    @Html.Section("bottom")
+</body>
+</html>
+
